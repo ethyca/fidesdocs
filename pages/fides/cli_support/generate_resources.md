@@ -209,14 +209,14 @@ These permissions can be supplied in an IAM policy:
 
 ### Filtering AWS Resources
 
-It is possible to filter resources at the organization level by adding a resource filter within `fidesctl_meta`. The `ignore_resource_arn` filter can exclude any resources with an exact matching Amazon Resource Name (ARN) and also supports wildcards in individual ARN fields. An empty ARN field in the filter pattern works as a wildcard.
+It is possible to filter resources at the organization level by adding a resource filter within `fides_meta`. The `ignore_resource_arn` filter can exclude any resources with an exact matching Amazon Resource Name (ARN) and also supports wildcards in individual ARN fields. An empty ARN field in the filter pattern works as a wildcard.
 
 The filter can be added to the organization model within your manifest file:
 ```yaml
 organization:
 - fides_key: default_organization
   name: default_organization
-  fidesctl_meta:
+  fides_meta:
     resource_filters:
     - type: ignore_resource_arn
       value: 'arn:aws:rds:us-east-1:910934740016:db:database-2'
@@ -245,7 +245,7 @@ system:
   organization_fides_key: default_organization
   name: my_redshift_cluster
   description: 'Fides Generated Description for Cluster: my_redshift_cluster'
-  fidesctl_meta:
+  fides_meta:
     endpoint_address: my_redshift_cluster.us-east-1.redshift.amazonaws.com
     endpoint_port: '5439'
     resource_id: arn:aws:redshift:us-east-1:910934740016:namespace:057d5b0e-7eaa-4012-909c-3957c7149176
@@ -333,14 +333,14 @@ system:
   organization_fides_key: default_organization
   name: salesforce
   description: 'Fides Generated Description for Okta Application: Salesforce.com'
-  fidesctl_meta:
+  fides_meta:
     resource_id: 0oa4jejqcp74R9MpJ5d7
   privacy_declarations: []
 - fides_key: 0oa4jekd00tpvn5hN5d7
   organization_fides_key: default_organization
   name: google
   description: 'Fides Generated Description for Okta Application: Google Workspace'
-  fidesctl_meta:
+  fides_meta:
     resource_id: 0oa4jekd00tpvn5hN5d7
   privacy_declarations: []
 ```

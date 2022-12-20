@@ -62,7 +62,7 @@ Privacy request execution will exit early with a status of `requires_input` if w
 A request will need to be made for each manual_webhook to upload the requested data before request execution can proceed.
 
 Note that the fields here are dynamic and should match the fields specified on the manual webhook. All fields are optional.
-If no data exists, an empty dictionary should be uploaded. Fidesops treats this upload as confirmation that the
+If no data exists, an empty dictionary should be uploaded. Fides treats this upload as confirmation that the
 system was searched for data related to the data subject.
 
 ```json title="<code>PATCH /privacy-request/{{privacy_request_id}}/access_manual_webhook/{{manual_webhook_key}}</code>"

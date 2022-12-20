@@ -21,20 +21,20 @@ dataset:
       - name: users
         fields:
           - name: _id
-            fidesops_meta:
+            fides_meta:
               primary_key: True
           - name: user_name
-            fidesops_meta:
+            fides_meta:
               identity: username
            - name: full_name
 
       - name: accounts
         fields:
           - name: _id
-            fidesops_meta:
+            fides_meta:
               primary_key: True
           - name: name
-            fidesops_meta:
+            fides_meta:
                 references:
                     - dataset: mongo_1
                       name: users.full_name
@@ -49,7 +49,7 @@ dataset:
       - name: users
         fields:
           - name: id
-            fidesops_meta:
+            fides_meta:
               primary_key: True
               references:
                 - dataset: postgres_1
@@ -66,10 +66,10 @@ dataset:
       - name: purchase_items
         fields:
           - name: id
-            fidesops_meta:
+            fides_meta:
               primary_key: True
           - name: purchase_id
-            fidesops_meta:
+            fides_meta:
               references:
                 - dataset: postgres_1
                   field: purchases.id
@@ -80,10 +80,10 @@ dataset:
       - name: purchases
         fields:
           - name: id
-            fidesops_meta:
+            fides_meta:
               primary_key: True
           - name: user_id
-            fidesops_meta:
+            fides_meta:
               references:
                 - dataset: postgres_1
                   field: users.id
@@ -91,10 +91,10 @@ dataset:
       - name: users
         fields:
           - name: id
-            fidesops_meta:
+            fides_meta:
               primary_key: True
           - name: email
-              fidesops_meta:
+              fides_meta:
                 identity: email
           - name: address_id
 ```

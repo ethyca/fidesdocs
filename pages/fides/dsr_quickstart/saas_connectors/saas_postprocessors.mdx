@@ -1,10 +1,12 @@
+import Callout from 'nextra-theme-docs/callout'
+
 # SaaS Post-Processors
 
-Post-processors are, in essence, data transformers. Given data from an endpoint, we can add specific processors to transform the data into a format we need for privacy requests.
+Post-processors represent a form of data transformation. Fides can perform various processing methods to transform data received from a given endpoint into a format required for privacy requests.
 
 ## Configuration
 
-Post-processors are configured within the `endpoints` section of a `saas_config`:
+Post-processors are configured within the `endpoints` section of your [SaaS configuration](./saas_config).
 
 ```yaml
 endpoints:
@@ -26,20 +28,21 @@ endpoints:
                 identity: email
 ```
 
-Note: Order matters as it's defined in the config. In the above example, unwrap will be run first, then the output of unwrap will be used in the filter strategy.
+ <Callout> Order matters to the SaaS configuration. In the above example, **unwrap** will run first, and the output of unwrap will be used in the **filter strategy**.</Callout>
 
 ### Format subsequent requests
-
 Post-processors can format the results of your access requests for use in subsequent update or delete statements.
 
 For example, if we need to return the following in an access request:
 
 ```json
-{"recipient": "test@email.com",
+{
+  "recipient": "test@email.com",
   "subscriptions": [{
     "id": "123",
     "subscribed": "TRUE"
-  }]}
+  }]
+}
 ```
 
 And we needed to perform an update request for each item within `subscriptions`, where `subscribed` = `TRUE`, then we'd need the following config for our update request:

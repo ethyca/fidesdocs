@@ -4,5 +4,6 @@
   "saas_oauth2": "OAuth2 Configuration",
   "saas_pagination": "Pagination",
   "saas_postprocessors": "Postprocessing",
+  "saas_rate_limiting": "Rate Limiting",
   "example_configs": "Example Connections"
 }

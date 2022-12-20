@@ -44,23 +44,23 @@ dataset:
         fields:
           - name: id
             data_categories: [system.operations]
-            fidesops_meta:
+            fides_meta:
               primary_key: True
           - name: street
             data_categories: [user.contact.address.street]
-            fidesops_meta:
+            fides_meta:
               data_type: string
           - name: city
             data_categories: [user.contact.address.city]
-            fidesops_meta:
+            fides_meta:
               data_type: string
           - name: state
             data_categories: [user.contact.address.state]
-            fidesops_meta:
+            fides_meta:
               data_type: string
           - name: zip
             data_categories: [user.contact.address.postal_code]
-            fidesops_meta:
+            fides_meta:
               data_type: string
 
       - name: customer
@@ -68,7 +68,7 @@ dataset:
         fields:
           - name: address_id
             data_categories: [system.operations]
-            fidesops_meta:
+            fides_meta:
               references:
                 - dataset: mydatabase
                   field: address.id
@@ -77,16 +77,16 @@ dataset:
             data_categories: [system.operations]
           - name: email
             data_categories: [user.contact.email]
-            fidesops_meta:
+            fides_meta:
               identity: email
               data_type: string
           - name: id
             data_categories: [user.unique_id]
-            fidesops_meta:
+            fides_meta:
               primary_key: True
           - name: name
             data_categories: [user.name]
-            fidesops_meta:
+            fides_meta:
               data_type: string
 ```
 
@@ -112,18 +112,18 @@ dataset:
 | --- | ----- |
 | `name` | The name of the field will be used to generate query and update statements. **Fides does not do automated schema discovery,** and is only aware of the fields you declare.
 | `data_categories` | Annotating `data_categories` connects fields to execution policy rules, and determines which actions apply to each field. For more information see [execution policies](./execution_policies).
-| `fidesops_meta` | The `fidesops_meta` section specifies additional fields that control how Fides manages your data.
+| `fides_meta` | The `fides_meta` section specifies additional fields that control how Fides manages your data.
 | `references` | A declaration of relationships between collections. Where the `customer` configuration declares a reference to `mydatabase:address:id`, Fides will use the values from `mydatabase.address.id` to search for related values in `customer`. References require both the Dataset and collection name to allow for multiple Dataset-collection configurations. |
 | `references.field` | The linked field, using the syntax `[dataset name].[collection name ].[field name]`. |
 | `references.identity` | Signifies that this field is an identity value that can be used as the root for a traversal. For more information, see [graph traversals](./query_execution). |
-| `references.direction` | *Optional.* Accepted values are `from` or `to`. This determines how fidesops uses the relationships to discover data. If the direction is `to`, fidesops will only use data in the _source_ collection to discover data in the _referenced_ collection. If the direction is `from`, fidesops will only use data in the _referenced_ collection to discover data in the _source_ collection. If the direction is omitted, fidesops will traverse the relation in whatever direction works to discover all related data.
+| `references.direction` | *Optional.* Accepted values are `from` or `to`. This determines how Fides uses the relationships to discover data. If the direction is `to`, Fides will only use data in the _source_ collection to discover data in the _referenced_ collection. If the direction is `from`, Fides will only use data in the _referenced_ collection to discover data in the _source_ collection. If the direction is omitted, Fides will traverse the relation in whatever direction works to discover all related data.
 |`references.primary_key` | *Optional.* A boolean value. Fides will treat this field as a unique row identifier for generating update statements. If no primary key is specified for any field on a collection, no updates will be generated against that collection. If multiple fields are marked as primary keys, the combination of their values will be treated as a combined key. |
-| `references.data_type` | *Optional.* An indication of the type of data held by this field. Data types are used to convert values to the appropriate type when those values are used in queries. This is especially necessary when using data of one type to help locate data of another type.  Data types are also used to generate the appropriate masked value when running erasures, since fidesops needs to know the type of data expected by the field in order to generate an appropriate masked value. Available data types are `string`, `integer`, `float`, `boolean`, and `object_id`. `object` types are also supported for MongoDB.
+| `references.data_type` | *Optional.* An indication of the type of data held by this field. Data types are used to convert values to the appropriate type when those values are used in queries. This is especially necessary when using data of one type to help locate data of another type.  Data types are also used to generate the appropriate masked value when running erasures, since Fides needs to know the type of data expected by the field in order to generate an appropriate masked value. Available data types are `string`, `integer`, `float`, `boolean`, and `object_id`. `object` types are also supported for MongoDB.
 | `references.length` | *Optional.* An indicator of field length. |
 | `references.return_all_elements` | *Optional.*  For array entrypoint fields, specify whether the query should return/mask all fields, or just matching fields.  By default, we just return/mask matching fields. Setting `return_all_elements=true` will return/mask the entire array. |
 
 ### Generate a Dataset
-The Fides CLI allows you to both connect to and generate a blank Dataset for your datastores. This blank Dataset does not include any annotations (e.g., Fides data descriptions) or `fidesops_meta` information, but can be used to initially map your databases.
+The Fides CLI allows you to both connect to and generate a blank Dataset for your datastores. This blank Dataset does not include any annotations (e.g., Fides data descriptions) or `fides_meta` information, but can be used to initially map your databases.
 
 For more information, see [generating resources](../../cli_support/generate_resources).
 
@@ -150,11 +150,11 @@ dataset:
         fields:
           - name: box_id
             data_categories: [ user ]
-            fidesops_meta:
+            fides_meta:
               primary_key: true
           - name: email
             data_categories: [ user.contact.email ]
-            fidesops_meta:
+            fides_meta:
               identity: email
               data_type: string
 ```

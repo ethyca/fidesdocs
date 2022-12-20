@@ -17,21 +17,21 @@ dataset:
         fields:
           - ...
           - name: workplace_info
-            fidesops_meta:
+            fides_meta:
                 data_type: object
             fields:
               - name: employer
-                fidesops_meta:
+                fides_meta:
                   data_type: string
               - name: position
                 data_categories: [ user.job_title ]
-                fidesops_meta:
+                fides_meta:
                   data_type: string
               - name: id
 ```
 
 ## Reference a nested field
-To define a relationship between a field on one collection and a nested field on another collection, use dot notation in the `fidesops_meta` references for as many levels are necessary.
+To define a relationship between a field on one collection and a nested field on another collection, use dot notation in the `fides_meta` references for as many levels are necessary.
 
 In the example below, this field is denoted by `<collection_name>.<field_name>.<sub_field>` name, or
 `customer_details.workplace_info.id`.
@@ -49,7 +49,7 @@ dataset:
         fields:
           - name: workplace_id
             data_categories: [system.operations]
-            fidesops_meta:
+            fides_meta:
               references:
                 - dataset: mongo_nested_object_example
                   field: customer_details.workplace_info.id
@@ -75,7 +75,7 @@ dataset:
         fields:
           - ...
           - name: travel_identifiers
-            fidesops_meta:
+            fides_meta:
               data_type: string[]
               data_categories: [system.operations]
 ```
@@ -94,19 +94,19 @@ dataset:
       - name: customer
         fields:
           - name: workplace_info
-            fidesops_meta:
+            fides_meta:
               data_type: object
             fields:
               - name: employer
-                fidesops_meta:
+                fides_meta:
                   data_type: string
               - name: position
                 data_categories: [ user.job_title ]
-                fidesops_meta:
+                fides_meta:
                   data_type: string
               - name: direct_reports
                 data_categories: [ user.name ]
-                fidesops_meta:
+                fides_meta:
                   data_type: string[]
 ```
 
@@ -124,19 +124,19 @@ dataset:
       - name: customer
         fields:
           - name: emergency_contacts
-            fidesops_meta:
+            fides_meta:
               data_type: object[]
             fields:
               - name: name
                 data_categories: [ user.name ]
-                fidesops_meta:
+                fides_meta:
                   data_type: string
               - name: relationship
-                fidesops_meta:
+                fides_meta:
                   data_type: string
               - name: phone
                 data_categories: [ user.contact.phone_number ]
-                fidesops_meta:
+                fides_meta:
                   data_type: string
 ```
 
@@ -158,22 +158,22 @@ dataset:
           - name: passenger_information
             fields:
               - name: passenger_ids
-                fidesops_meta:
+                fides_meta:
                   data_type: string[]
           - name: plane
             data_categories: [ system.operations ]
-            fidesops_meta:
+            fides_meta:
               data_type: integer
       - name: aircraft
         fields:
           - name: _id
             data_categories: [ system.operations ]
-            fidesops_meta:
+            fides_meta:
               primary_key: True
               data_type: object_id
           - name: planes
             data_categories: [ system.operations ]
-            fidesops_meta:
+            fides_meta:
               data_type: integer[]
               references:
                 - dataset: mydatabase
@@ -181,7 +181,7 @@ dataset:
                   direction: from
           - name: model
             data_categories: [ system.operations ]
-            fidesops_meta:
+            fides_meta:
               data_type: string
 ```
 
@@ -199,31 +199,31 @@ dataset:
       - name: customer
         fields:
           - name: comments
-            fidesops_meta:
+            fides_meta:
               data_type: object[]
             fields:
               - name: comment_id
-                fidesops_meta:
+                fides_meta:
                   data_type: string
                   references:
                     - dataset: mydatabase
                       field: conversations.thread.comment
                       direction: to
       - name: conversations
-        fidesops_meta:
+        fides_meta:
           data_type: object[]
         fields:
           - name: thread
             fields:
               - name: comment
-                fidesops_meta:
+                fides_meta:
                   data_type: string
               - name: message
-                fidesops_meta:
+                fides_meta:
                   data_type: string
               - name: chat_name
                 data_categories: [ user.name ]
-                fidesops_meta:
+                fides_meta:
                   data_type: string
 ```
 
