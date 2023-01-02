@@ -13,7 +13,7 @@ Ready to get started? Use our [sample application](./installation/sample_project
 <KeyFeatWrap>
   <KeyFeat title="DSR Automation" link="./dsr_quickstart/overview"  description="Go from 'Zero to DSR Automation' in your own infrastructure."/>
   <KeyFeat title="Data Mapping" link="./data_mapping/overview"  description="Generate maps of your systems and infrastructure with Fides' automated tools."/>
-  <KeyFeat title="Managing Consent" link="./consent/privacy_center"   description="Understand how Fides can help provide you with compliance-minded consent solutions."/>
+  <KeyFeat title="Managing Consent" link="./consent/consent_management"   description="Understand how Fides can help provide you with compliance-minded consent solutions."/>
   <KeyFeat title="Fides for Businesses" link="../enterprise/overview"   description="Use Fides for Enterprise-level data classifications, visualizations, and more."/>
 </KeyFeatWrap>
 

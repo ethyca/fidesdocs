@@ -1,6 +1,6 @@
 # Fides Deploy Development
 
-This guide closely mirrors the [Fides Deploy](../../deployment) page wih some slight differences to account for running in a development environment.
+This guide closely mirrors the [Fides Deploy](../../deployment/deployment) page wih some slight differences to account for running in a development environment.
 
 ## Deployment Steps
 

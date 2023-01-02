@@ -2,7 +2,7 @@ import Callout from 'nextra-theme-docs/callout'
 
 # Get Started with Fides
 
-<Callout emoji="ⓘ">This guide is designed to get you started with Fides in as few steps as possible. Want to learn about configuration in-depth? Check out our [advanced setup](./advanced) and [deployment](../deployment) guides!</Callout>
+<Callout emoji="ⓘ">This guide is designed to get you started with Fides in as few steps as possible. Want to learn about configuration in-depth? Check out our [advanced setup](./advanced) and [deployment](../deployment/deployment) guides!</Callout>
 
 ## Minimum requirements
 See the the [project requirements](../installation/requirements) to get started.
