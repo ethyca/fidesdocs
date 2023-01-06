@@ -1,4 +1,4 @@
-## Fides System Scanners 
+# Fides System Scanners 
 
 In Fides, _systems_ describe any services that store or process data for your organization, including third-party APIs, web applications, databases, and data warehouses. Fides ships with automated infrastructure discovery capabilities, making detecting and adding new systems to your data map a straightforward process.
 
