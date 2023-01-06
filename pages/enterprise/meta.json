@@ -1,6 +1,7 @@
 {
   "overview": "Overview",
-  "datamaps": "Data Map Automation",
+  "datamaps": "Data Map Automations",
   "classifier": "Data Classification",
-  "datamasking": "Enhanced Data Masking"
+  "datamasking": "Enhanced Data Masking",
+  "dataflow_scanner": "Data Flow Scanner"
 }

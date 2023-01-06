@@ -12,6 +12,8 @@ In Fides, _systems_ describe any services that store or process data for your or
 
 ![Datamap](../../public/assets/img/enterprise/datamap_generate.png)
 
+Use any of the provided options to add your systems: [infrastructure scanners](../fides/data_mapping/scanners) for Okta and AWS, [data flow scanners](./dataflow_scanner) for your runtime environment, and [manual additions](../fides/data_mapping/scanners#manual-system-generation) for all other services.
+
 ## Manage your data map
 
 With your systems added, your data map is ready to use! 
