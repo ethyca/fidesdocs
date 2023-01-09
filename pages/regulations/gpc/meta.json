@@ -1,0 +1,11 @@
+{
+  "overview": "Introduction",
+  "what_is_gpc": "What is the GPC?",
+  "consumer_gpc": "Consumers: How does GPC work?",
+  "dev_gpc": "Developers: How does GPC work?",
+  "legal_gpc": "Legal Teams: How do I comply with GPC?",
+  "detect_gpc": "01: Detect & record GPC signals",
+  "geo_gpc": "02: Define where GPC applies",
+  "enforce_gpc": "03: Enforce GPC across systems",
+  "dataflow_gpc": "GPC Bonus: Data flows everywhere!"
+}

@@ -21,6 +21,13 @@
       "breadcrumb": false
     }
   },
+  "regulations": {
+    "title": "Regulations",
+    "type": "page",
+    "theme": {
+      "breadcrumb": false
+    }
+  },
   "ethyca": {
     "title": "About Ethyca",
     "type": "page",
